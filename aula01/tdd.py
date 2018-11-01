@@ -11,6 +11,9 @@ class TestDojoMethods(unittest.TestCase):
     def test_soma(self):
     	self.assertEqual(soma(2,2), 4)
 
+    def test_soma_numero_negativo(self):
+    	self.assertEqual(soma(2,-2), 0)
+
     def test_valida_numero(self):
     	self.assertFalse(validador('x'))
 
