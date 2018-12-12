@@ -1,0 +1,163 @@
+*{
+	margin: 0;
+	padding: 0;
+	height: auto;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 600;
+}
+
+header{
+	width: 100%;
+	background-color: #d8d8d8;
+}
+
+#topo{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#logo{
+	width: 12%;
+	float: left;
+}
+
+#logo img{
+	width: 100%;
+}
+
+#menu{
+	width: 78%;
+	float: right;
+	margin: 45px 0 0 0;
+}
+
+#menu ul{
+	list-style: none;
+}
+
+#menu ul li{
+	float: left;
+	/*border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #333;*/	
+	border-left:solid 1px #333;
+}
+
+#menu ul li:last-child{
+	border-right:solid 1px #333;
+}
+
+
+#menu ul li a{
+	text-decoration: none;
+	color: #333;
+	text-transform: uppercase;
+	padding: 5px 20px;
+}
+
+#menu ul li a:hover{
+	opacity: 0.5;
+	transition-duration: 1.0s;	
+}
+
+/* ------------------- main -------------------*/
+
+main{
+	width: 100%;
+}
+
+/* ------------------- banner -------------------*/
+
+#banner{
+	width: 100%;
+}
+
+#banner img{
+	width: 100%
+}
+
+/* ------------------- fale conosco -------------*/
+
+#contato{
+	width: 100%
+}
+
+#fundo-contato{
+	width: 100%;
+	background-color: #333;
+}
+
+#total-contato{
+	width: 80%;
+	margin: 0 auto;
+}
+
+#total-contato h2{
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: 600;
+	text-align: center;
+}
+
+#formulario{
+	width: 50%;
+}
+
+#formulario form p{
+	margin-bottom: 10px !important;
+	width: 100%;
+	
+}
+
+#formulario label{
+	color: #fff;
+	width: 19%;
+	float: left;
+	text-align: right;
+}
+
+
+#formulario input, #formulario textarea{
+	width: 75%;
+	float: right;
+	margin: 0 0 0 2%;
+	/*font-size:18px;*/
+	padding: 7px 5px;
+}
+
+#formulario textarea{
+	resize: none;
+}
+
+#formulario input[type=submit]{
+	width: 20%;
+	float: right;
+}
+
+/* ----------------telas até 1024px -------------------  */
+
+@media(max-width: 1024px){
+	#topo{
+		width: 800px;		
+	}
+
+	#logo{
+		width: 10%;		
+	}
+
+	#menu{
+		width: 85%;
+		margin: 33px 0 0 0;
+	}
+
+	#menu ul li a{		
+		padding: 5px 15px;
+	}
+
+}
+
+
+@media(max-width: 768px) and (max-width: 640px){
+	
+}
+
