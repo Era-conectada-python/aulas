@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import url, include
 from rest_framework import routers
+from django.urls import path
 
 from nutricao.api.views import PacienteViewSet, DietaViewSet
+from paciente import views
 
 
 # Routers provide an easy way of automatically determining the URL conf.
@@ -30,5 +32,7 @@ router.register(r'dietas', DietaViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls'))
+    url(r'^api-auth/', include('rest_framework.urls')),
+    path('form-paciente/', views.paciente_view),
+    path('form-dieta/', views.dieta_view)
 ]
