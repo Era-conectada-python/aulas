@@ -3,12 +3,14 @@ from rest_framework import serializers
 from paciente.models import Paciente, Dieta
 
 
-class PacienteSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Paciente
-        fields = ('nome', 'idade', 'telefone', 'profissao', 'email')
-
-class DietaSerializer(serializers.HyperlinkedModelSerializer):
+class DietaSerializer(serializers.ModelSerializer):
+    paciente = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
     class Meta:
         model = Dieta
-        fields = ('__all__')
+        fields = ('paciente', 'plano_alimentar', 'periodo', 'paciente')
+
+class PacienteSerializer(serializers.ModelSerializer):
+    dieta = DietaSerializer(many=True, read_only=True)
+    class Meta:
+        model = Paciente
+        fields = ('nome', 'idade', 'telefone', 'profissao', 'email', 'dieta')

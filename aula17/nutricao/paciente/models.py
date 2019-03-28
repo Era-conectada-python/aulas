@@ -11,6 +11,6 @@ class Paciente(models.Model):
 		return self.nome
 
 class Dieta(models.Model):
-	paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
+	paciente = models.ManyToManyField(Paciente, related_name='dieta')
 	plano_alimentar = models.CharField(max_length=200)
 	periodo = models.CharField(max_length=200, choices=[('1', 'manhã'), ('2', 'tarde'), ('3', 'noite')])
