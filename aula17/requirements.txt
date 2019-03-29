@@ -1,0 +1,14 @@
+certifi==2019.3.9
+chardet==3.0.4
+Django==2.1.7
+-e git+https://github.com/jazzband/django-debug-toolbar.git@adb9efd7078f6adf45d0dec072869081f872392a#egg=django_debug_toolbar
+django-filter==2.1.0
+django-filters==0.2.1
+django-rest-framework==0.1.0
+djangorestframework==3.9.2
+idna==2.8
+Markdown==3.0.1
+pytz==2018.9
+requests==2.21.0
+sqlparse==0.3.0
+urllib3==1.24.1 
