@@ -26,8 +26,10 @@ from paciente import views
 router = routers.DefaultRouter()
 router.register(r'pacientes', PacienteViewSet, basename='pacientes')
 router.register(r'dietas', DietaViewSet, basename='dietas')
-router.register(r'paciente-dietas', PacienteDietasViewSet, basename='paciente-dietas')
-router.register(r'dieta-pacientes', DietaPacientesViewSet, basename='dieta-pacientes')
+router.register(r'especialidades', EspecialidadeViewSet, basename='especialidades')
+router.register(r'nutricionistas', NutricionistaViewSet, basename='nutricionistas')
+router.register(r'consultas', ConsultaViewSet, basename='consultas')
+router.register(r'avaliacoes', AvaliacaoViewSet, basename='avaliacoes')
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
@@ -35,6 +37,11 @@ router.register(r'dieta-pacientes', DietaPacientesViewSet, basename='dieta-pacie
 urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls')),
+    path('admin/', admin.site.urls),
     path('form-paciente/', views.paciente_view),
-    path('form-dieta/', views.dieta_view)
+    path('form-dieta/', views.dieta_view),
+    path('form-especialidade/', views.especialidade_view),
+    path('form-nutricionista/', views.nutricionista_view),
+    path('form-consulta/', views.consulta_view),
+    path('form-avaliacao/', views.avaliacao_view)
 ]

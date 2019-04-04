@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from paciente.models import Paciente, Dieta
+from paciente.models import *
 
 
 class DietaSerializer(serializers.ModelSerializer):
@@ -11,16 +11,24 @@ class DietaSerializer(serializers.ModelSerializer):
 class PacienteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Paciente
-        fields = ('nome', 'idade', 'telefone', 'profissao', 'email')
+        fields = ('nome', 'data_nascimento', 'telefone', 'profissao', 'email')
 
-class DietaPacientesSerializer(serializers.ModelSerializer):
-    paciente = PacienteSerializer(many=True, read_only=True)
+class EspecialidadeSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Dieta
-        fields = ('paciente', 'plano_alimentar', 'periodo')
+        model = Especialidade
+        fields = ('nome', 'descricao')
 
-class PacienteDietasSerializer(serializers.ModelSerializer):
-    dieta = DietaSerializer(many=True, read_only=True)
+class NutricionistaSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Paciente
-        fields = ('nome', 'idade', 'telefone', 'profissao', 'email', 'dieta')
+        model = Nutricionista
+        fields = ('nome', 'especialidades', 'email', 'telefone', 'crn')
+
+class ConsultaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Consulta
+        fields = ('data_hora', 'tipo', 'local', 'dieta', 'paciente', 'nutricionista')
+
+class AvaliacaoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Avaliacao
+        fields = ('peso', 'altura', 'consulta')

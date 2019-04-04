@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 
-from paciente.models import Paciente, Dieta
+from paciente.models import *
 from nutricao.api.serializers import *
 from nutricao.api.filters import PacienteFilter
 
@@ -14,12 +14,18 @@ class DietaViewSet(viewsets.ModelViewSet):
     queryset = Dieta.objects.all()
     serializer_class = DietaSerializer
 
-class PacienteDietasViewSet(viewsets.ModelViewSet):
-    queryset = Paciente.objects.all()
-    serializer_class = PacienteDietasSerializer
+class EspecialidadeViewSet(viewsets.ModelViewSet):
+    queryset = Especialidade.objects.all()
+    serializer_class = EspecialidadeSerializer
 
-class DietaPacientesViewSet(viewsets.ModelViewSet):
-    queryset = Dieta.objects.all()
-    serializer_class = DietaPacientesSerializer
+class NutricionistaViewSet(viewsets.ModelViewSet):
+    queryset = Nutricionista.objects.all()
+    serializer_class = NutricionistaSerializer
 
+class ConsultaViewSet(viewsets.ModelViewSet):
+    queryset = Consulta.objects.all()
+    serializer_class = ConsultaSerializer
 
+class AvaliacaoViewSet(viewsets.ModelViewSet):
+    queryset = Avaliacao.objects.all()
+    serializer_class = AvaliacaoSerializer
