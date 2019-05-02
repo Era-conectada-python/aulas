@@ -1,10 +1,6 @@
-import ast
 import click
-import csv
 import sqlite3
 import xlrd
-
-import pandas as pd
 
 
 def make_table(name, columns, rows):
